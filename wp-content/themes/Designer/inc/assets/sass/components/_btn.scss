@@ -1,0 +1,23 @@
+.btn {
+  color: $white;
+  text-decoration: none;
+  padding: 18px 30px;
+  font-size: $text-m;
+  line-height: 1;
+  min-width: 190px;
+  text-align: center;
+  border-radius: 0;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  &:hover {
+    color: $white;
+  }
+  &--primary {
+    background-color: $primary;
+    &:hover {
+      background-color: darken($primary, 10%);
+    }
+  }
+}

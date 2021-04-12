@@ -1,0 +1,49 @@
+h1, h2, h3, h4, h5, h6, p, li, blockquote {
+  @extend %font-fix;
+}
+
+h1 {
+  font-size: $text-xxl;
+  font-weight: 900;
+  margin-bottom: 25px;
+  color: $white;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: $text-xl;
+  color: $primary;
+  font-weight: 400;
+  line-height: 1.167;
+}
+
+h3 {
+  font-size: $text-l;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $white;
+  line-height: 1.167;
+}
+
+h4 {
+  font-size: $text-l;
+  font-weight: 700;
+  color: $white;
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+a {
+  color: $primary;
+  @include transition(all 0.2s);
+  &:hover {
+    color: darken($primary, 10%);
+    text-decoration: none;
+  }
+}

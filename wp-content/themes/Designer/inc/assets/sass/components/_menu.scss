@@ -1,0 +1,40 @@
+.navbar-collapse {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: rgba(31, 36, 43, 0.9);
+}
+
+.navbar-light .navbar-toggler{
+  border-color: transparent;
+  &:focus{
+    outline: transparent;
+  }
+}
+
+.navbar-light .navbar-toggler-icon{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+#menu-menu-1{
+  padding: 18px 31px 19px 31px;
+  z-index: 200;
+  a{
+    color: $primary;
+    border-bottom: 1px solid $gray-base;
+    transition: .2s ease all;
+    &:hover{
+      color: $white;
+    }
+  }
+  .current-menu-item{
+    a{
+      color: $white;
+    }
+  }
+  li:last-child{
+    a{
+      border-bottom: none;
+    }
+  }
+}

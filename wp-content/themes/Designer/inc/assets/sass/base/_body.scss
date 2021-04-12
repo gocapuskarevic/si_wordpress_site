@@ -1,0 +1,12 @@
+body {
+  @extend %font-fix;
+  font-family: $font-family-base;
+  font-size: $text-base;
+  font-weight: 300;
+  line-height: $line-height-base;
+  color: $gray-text;
+}
+
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,21 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+/**/.DS_Store
+
+# WordPress files #
+###################
+**/wp-config.php
+**/wp-admin
+**/wp-includes
+**/*.log
+**/.htaccess
+**/sitemap.xml
+**/sitemap.xml.gz
+
+# SASS files #
+###################
+**/*.css.map
+**/.sass-cache
+wp-config-sample.php
