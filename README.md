@@ -1,4 +1,4 @@
-# lica-krize
+# designer
 
 ### Prerequisites
 * Ruby
