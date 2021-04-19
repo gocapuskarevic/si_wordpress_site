@@ -1,0 +1,140 @@
+.form-holder {
+  margin-top: 27px;
+  .ecommerce-content &{
+    margin-top: 36px;
+  }
+  .form-group {
+    margin-bottom: 25px
+  }
+  input {
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  p {
+    margin-top: 22px;
+    font-size: $font-small;
+  }
+
+  /* mailchimp form */
+  #mc_embed_signup {
+    form {
+      display: block;
+      position: relative;
+      text-align: left;
+      padding: 0;
+    }
+    #mc_embed_signup_scroll {
+      .indicates-required {
+        text-align: left;
+        margin-bottom: 20px;
+      }
+    }
+    .mc-field-group {
+      width: auto;
+      padding-bottom: 0;
+      min-height: inherit;
+      input {
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+        text-indent: 2%;
+        border-radius: 50px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    #mc-embedded-subscribe-form {
+      div.mce_inline_error {
+        color: red;
+        font-size: .8rem;
+        font-weight: 500;
+        margin: 5px 0;
+        position: absolute;
+        top: 38px;
+        background: rgba(0, 0, 0, 0);
+        left: 0;
+        text-align: right;
+        width: 100%;
+      }
+    }
+    .asterisk {
+      font-size: 100%;
+      top: -2px;
+      margin-bottom: inherit;
+    }
+    #mc-embedded-subscribe {
+      border-radius: 50px;
+      border: none;
+      margin: inherit;
+      &:focus {
+        outline: none;
+      }
+    }
+    .response {
+      width: 100%
+    }
+    #mce-responses {
+      width: 100%;
+      margin: 0;
+    }
+    #mce-success-response {
+      color: $white;
+      font-size: 0;
+      &::after {
+        content: "Thank you for your interest. Expect an email from us in the next 24 hours.";
+        color: $gray;
+        display: block;
+        font-size: $font-small;
+        margin: 15px 0;
+      }
+    }
+  }
+  &.signup {
+    margin-top: 10px;
+    label {
+      font-weight: $normal;
+      margin-top: 10px;
+      font-size: $font-small;
+    }
+    #mc_embed_signup textarea {
+      border: 1px solid $gray-dark;
+      padding: 10px 25px;
+      resize: none;
+      overflow: hidden;
+      &:focus {
+        border-color: $black;
+        outline: none;
+      }
+    }
+    /*form .col-md-offset-3 #mc-embedded-subscribe-form .mc-field-group .mce_inline_error {
+        position: static;
+    }*/
+  }
+}
+
+.form-control {
+  border-radius: 50px;
+}
+
+.btn-primary {
+  background: $brand-accent;
+  border-color: $brand-accent;
+  padding: 0 50px;
+  @include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
+  &:hover {
+    background: #7a1541;
+    border-color: #7a1541;
+  }
+}
+
+.form-holder.signup #mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
+  position: static;
+}
+
+.form-holder {
+  .btn-rose {
+    padding: 0 42px;
+  }
+}

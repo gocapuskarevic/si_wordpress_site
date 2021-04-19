@@ -1,0 +1,31 @@
+.page-custom-software-development, .page-custom-elearning-platforms, .page-digitalization-of-large-enterprises{
+  .section-landing-title{
+    margin-top: 15px;
+    margin-bottom: 3.7rem;
+    h1{
+      text-align: center;
+      padding-right: 0;
+    }
+  }
+  h1, h2, h3, h4{
+    font-weight: 300;
+  }
+  .right-side{
+    h2{
+      text-transform: none;
+      text-align: center;
+      padding-bottom: 80px;
+      @include media-breakpoint-down(md) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+    }
+  }
+  .lower{
+    text-transform: lowercase;
+  }
+}
+
+.landing-link{
+  margin-bottom: 12px;
+} 

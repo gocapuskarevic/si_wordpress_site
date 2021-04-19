@@ -1,0 +1,35 @@
+// Logo styling
+// ------------
+.logo {
+  @include transition(margin-top 0.2s ease-in-out);
+  text-align: left;
+  margin-top: 37px;
+  h2 {
+    line-height: 0;
+    font-size: 0;
+    a {
+      display: inline-block;
+      img {
+        display: inline-block;
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    margin-top: 39px;
+    &.logo-blog {
+      img {
+        max-width: 130px;
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    margin-top: 20px;
+    text-align: center;
+    img {
+      max-width: 105px;
+    }
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}

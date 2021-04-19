@@ -1,0 +1,11 @@
+// Sidebar styling
+// ---------------
+.sidebar {
+  margin-top: 11px;
+  @include media-breakpoint-down(md) {
+    margin-top: 40px;
+    .single & {
+      margin-top: 0;
+    }
+  }
+}

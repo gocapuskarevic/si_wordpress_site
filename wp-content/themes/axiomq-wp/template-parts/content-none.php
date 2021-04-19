@@ -1,0 +1,34 @@
+<?php
+/**
+ * Template part for displaying a message that posts cannot be found
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package WP_Bootstrap_Starter
+ */
+
+?>
+<div class="col">
+  <div class="blog-search">
+    <section class="no-results not-found">
+      <header class="page-header">
+        <h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'wp-bootstrap-starter'); ?></h1>
+          <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+        <p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'wp-bootstrap-starter' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+          <?php elseif ( is_search() ) : ?>
+        <h3><?php esc_html_e( 'Sorry, but nothing matched your search terms.', 'wp-bootstrap-starter'); ?></h3>
+        <p class="pt-5"><?php esc_html_e( 'Please try again with some different keywords.', 'wp-bootstrap-starter'); ?></p>
+        <div >
+          <?php get_search_form();
+          else : ?>
+          <p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'wp-bootstrap-starter' ); ?></p>
+          <?php get_search_form(); 
+          endif; ?>
+        </div>
+      </header><!-- .page-header -->
+      <div class="button-back-to-blog">
+        <a href="blog" class="btn btn-white btn-width-md excerpt-button">Back to blog</a>
+      </div>  
+    </section><!-- .no-results -->
+  </div>
+</div>

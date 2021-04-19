@@ -1,0 +1,21 @@
+// Body styling
+// ------------
+body {
+  @extend %font-fix;
+  font-family: $font-alpha;
+  font-size: $font-base;
+  line-height: $line-text;
+  color: $onyx;
+  transition: all 0.5s ease;
+}
+
+#wpadminbar {
+  display: none;
+  height: 0;
+  min-height: 0;
+}
+
+html {
+  margin-top: 0 !important;
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,18 @@
+// Links configuration
+// ------------------------
+a {
+  color: $brand-primary;
+  @include transition(all 0.3s ease-in-out);
+  &:hover {
+    color: lighten($brand-primary, 10%);
+  }
+  &.primary {
+    color: $brand-accent;
+    &:hover {
+      color: lighten($brand-accent, 10%);
+    }
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}

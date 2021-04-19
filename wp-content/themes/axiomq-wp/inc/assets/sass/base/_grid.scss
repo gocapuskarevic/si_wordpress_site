@@ -1,0 +1,12 @@
+// Grid configuration
+// ------------------
+.container-fluid {
+  max-width: $base-width;
+  margin: 0 auto;
+}
+
+.col-custom-6 {
+  @media (max-width: 450px) {
+    width: 50%;
+  }
+}

@@ -1,0 +1,112 @@
+// Header styling
+// --------------
+.header {
+  @include transition(height 0.2s ease-in-out);
+  background: $white;
+  height: auto;
+  margin-bottom: 15px;
+  z-index: 50;
+  position: sticky;
+  .page-launch-your-web-store & {
+    margin-bottom: 0;
+  }
+  // @include media-breakpoint-down(md) {
+  //   height: 60px;
+  //   margin-bottom: 40px;
+  // }
+  &.blog {
+    height: 130px;
+  }
+  @include media-breakpoint-down(md){
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding-bottom: 12px;
+    .page-launch-your-web-store & {
+      position: relative;
+    }
+  }
+
+  & + div, + section, + canvas + div {
+    @include media-breakpoint-down(md){
+      padding-top: 70px;
+    }
+  }
+  &  + div#fullpage {
+    @include media-breakpoint-down(sm){
+      margin-top:0px;
+    }
+  }
+  .main-menu {
+    .menu-header-menu-container {
+      .menu {
+        .margin-right {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.sticky-header{
+  position: fixed;
+  width: 100%;
+  height: 0;
+  margin-bottom: 15px;
+  @include media-breakpoint-up(lg) {
+    .main-menu {
+      margin-top: 25px;
+    }
+    .logo {
+      margin-top: 13px;
+      img{
+        height: 45px;
+      }
+    }
+    .text-right {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      a {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+#header-fixed{
+  position: fixed;
+  top: -72px;
+  width: 100%;
+  margin-bottom: 15px;
+  z-index: 50;
+  transition: 0.3s all ease;
+  background-color: $white;
+  ul{
+    li{
+      &:last-child{
+        display: inline-block;
+        @include media-breakpoint-down(lg) {
+          display: block;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    .main-menu {
+      margin-top: 25px;
+    }
+    .logo {
+      margin-top: 13px;
+      img{
+        height: 45px;
+      }
+    }
+    .text-right {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      a {
+        margin-top: 0;
+      }
+    }
+  }
+}

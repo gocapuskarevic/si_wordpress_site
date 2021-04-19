@@ -1,0 +1,23 @@
+// Intro styling
+// -------------
+.intro {
+  @include position(relative);
+  padding: 29px 0 130px;
+  border-bottom: 1px solid $gray-light;
+  @include media-breakpoint-down(md) {
+    padding: 10px 0 100px;
+  }
+  img {
+    @include position(absolute, $bottom: 0, $right: 0);
+    @include media-breakpoint-down(md) {
+      max-height: 280px;
+      width: auto;
+    }
+    .page-team & {
+      top: 0;
+      @include media-breakpoint-down(md) {
+        max-height: 170px;
+      }
+    }
+  }
+}

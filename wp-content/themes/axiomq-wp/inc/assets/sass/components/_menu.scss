@@ -1,0 +1,381 @@
+// Navigation styling
+// ------------------
+.nav {
+  margin-top: 48px;
+  display: block;
+  @include media-breakpoint-down(md) {
+    @include transition(right 0.2s ease);
+    @include position(fixed, $top:0, $right: -240px);
+    background: $brand-primary;
+    height: 100%;
+    width: 240px;
+    z-index: 90;
+    margin-top: 0;
+    &.active {
+      box-shadow: #00000042 -1px 2px 20px 0px;
+      right: 0;
+    }
+  }
+  &.navbar-collapse {
+    padding: 0;
+  }
+  &.nav-footer {
+    margin-top: 14px;
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+    .nav-link {
+      font-size: 12px;
+    }
+  }
+  &.nav-right {
+    float: right;
+  }
+  .nav-link {
+    font-size:14px;
+  }
+}
+.menu {
+  @extend %reset-list;
+  font-size: $font-small;
+  line-height: $line;
+  color: $brand-primary;
+  text-align: center;
+  margin-bottom: 0;
+  .nav-footer & {
+    text-align: left;
+    font-size: $font-smaller;
+  }
+  @include media-breakpoint-down(lg) {
+    font-size: $font-small;
+  }
+  @include media-breakpoint-down(md) {
+    font-size: $font-smaller;
+  }
+  @include media-breakpoint-down(md) {
+    text-align: left;
+    padding-top: 80px;
+  }
+  li {
+    display: inline-block;
+    text-transform: uppercase;
+    margin-right: 24px;
+    &:last-child {
+      margin-right: 0;
+    }
+    .nav-footer & {
+      margin-right: 22px;
+      @include media-breakpoint-down(md) {
+        margin-right: 12px;
+      }
+    }
+    @include media-breakpoint-down(lg) {
+      margin-right: 20px;
+    }
+    &.active {
+      a {
+        color: #1cacb5 !important;
+        background: #fff !important;
+        @include media-breakpoint-down(md) {
+          background: $black;
+          color: $white;
+        }
+      }
+    }
+    @include media-breakpoint-down(md) {
+      display: block;
+      margin-right: 0;
+    }
+    &.custom-mobile {
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+    }
+  }
+  a {
+    @include transition(color 0.2s ease-in-out);
+    color: $onyx;
+    padding: 0;
+    &:hover {
+      color: $brand-primary;
+      text-decoration: none;
+    }
+    @include media-breakpoint-down(md) {
+      display: block;
+      padding: 8px 15px;
+      color: $white;
+      &:hover {
+        background: $black;
+        color: $white;
+      }
+    }
+    &.home-blog {
+      margin-bottom: 15px;
+    }
+  }
+  &#menu-header-menu {
+    li {
+      margin-right: 15px !important;
+      &:last-child {
+        margin-right: 0;
+        @include media-breakpoint-down(md) {
+          a{
+            padding-left: 0;
+            padding-top: 23px;
+            margin-top: 15px;
+            margin-left: 15px;
+            border-top: 1px solid $white;
+            &:hover{
+              background: $brand-primary;
+              span{
+                color: $onyx;
+              }
+            }
+          }
+        }
+      }
+    }
+    .wpml-ls-display{
+      padding-left: 15px;
+      @include media-breakpoint-down(md) {
+        padding-left: 0;
+      }
+    }
+  }
+  &#menu-header-menu-german {
+    li {
+      &:last-child {
+        margin-right: 0;
+        @include media-breakpoint-down(md) {
+          a{
+            padding-left: 0;
+            padding-top: 23px;
+            margin-top: 15px;
+            margin-left: 15px;
+            border-top: 1px solid $white;
+            &:hover{
+              background: $brand-primary;
+              span{
+                color: $onyx;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.nav-toggle {
+  @include position(absolute, $top: 15px, $right: 15px);
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  z-index: 100;
+  @media (min-width: 992px) {
+    display: none;
+  }
+  .icon-bar {
+    @include transition(0.3s);
+    background: $black;
+    height: 1px;
+    width: 28px;
+    display: inline-block;
+    position: relative;
+    &:before,
+    &:after {
+      @include transition(0.3s);
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: $black;
+      content: '';
+      left: 0;
+      position: absolute;
+      transform-origin: 2.14286px center;
+      transform: rotate(0deg);
+    }
+    &:before {
+      top: 8px;
+    }
+    &:after {
+      top: -8px;
+    }
+    .navigation-open & {
+      background: transparent;
+      &:after,
+      &:before {
+        top: 0;
+        left: 0;
+        transform-origin: 50% 50%;
+      }
+      &:before { transform: rotate(45deg); }
+      &:after { transform: rotate(-45deg); }
+    }
+  }
+  &:focus {
+    outline: 0;
+  }
+  &.active {
+    @include position(fixed, $top: 15px, $right: 15px);
+    .icon-bar {
+      .navigation-open & {
+        background: transparent;
+      }
+    }
+  }
+}
+.navigation-open {
+  overflow: hidden;
+  position: fixed;
+}
+.float-button {
+  float: right;
+  margin-left: 40px;
+}
+.categories-menu {
+  padding-bottom: 5px;
+  margin-top: 25px;
+  padding: 5px 10px 14px 0;
+  @include media-breakpoint-down(md) {
+    padding: 0px;
+    margin: 0px;
+    background: none;
+    position: relative;
+    display: inline-block;
+  }
+  .post-categories {
+    @extend .menu;
+  }
+}
+.blog-nav {
+  @include media-breakpoint-up(lg) {
+    margin-top: 10px;
+    display: block;
+    .menu {
+      display: flex;
+      justify-content: space-between;
+    }
+    a {
+      font-size:0.95rem !important;
+      @media (max-width:991px){
+        font-size: 0.8rem !important;
+      }
+      &.current {
+        color: $brand-primary;
+      }
+    }
+    li {
+      margin-right: 0px;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      border-right: 1px solid $onyx;
+      @media (max-width: 991px){
+        padding: 0 1.3rem;
+      }
+      &:last-child {
+        border: 0;
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    background-color: $white;
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    .menu {
+      border: 1px solid $gray-lighter;
+      padding-top: 0;
+      font-size: $font-small;
+      .nav-item {
+        border-bottom: 1px solid $gray-lighter;
+        &:last-child {
+          border-bottom: none;
+        }
+        .nav-link {
+          color: $onyx;
+          &:hover {
+            background-color: transparent;
+            color: $brand-primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.blog-toggler {
+  padding: 10px 15px;
+  background-color: $gray-lighter;
+  color: $brand-primary;
+  text-transform: uppercase;
+  font-size: $font-base;
+  font-weight: $bold;
+  border-bottom: 2px solid transparent;
+  &:hover {
+    border-bottom: 2px solid $brand-primary;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.blog-toggler[aria-expanded="true"] {
+  &:after {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    content: "\f106";
+    margin-left: 10px;
+  }
+}
+
+.blog-toggler[aria-expanded="false"] {
+  &:after {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    content: "\f107";
+    margin-left: 10px;
+  }
+}
+.menu{
+  &#menu-header-menu-german{
+    text-align: left;
+    li{
+      margin-right: 15px !important;
+      @include media-breakpoint-down(lg) {
+        margin-right: 6px !important;
+      }
+      @include media-breakpoint-down(md) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.wpml-ls-display{
+  font-weight: 600;
+  color: $brand-accent;
+  padding: 5px 0px 5px 15px;
+  border-left: 1px solid #000;
+  @include media-breakpoint-down(lg) {
+    padding: 5px 0px 5px 6px;
+  }
+  @include media-breakpoint-down(md) {
+    border-left: none;
+    padding: 0;
+    color: $white;
+  }
+}
+
+#menu-header-menu-german-1, #menu-header-menu-1{
+  li:last-child{
+    display: none;
+  }
+}
+
+#cat-menu{
+  li{
+    text-transform: capitalize !important;
+  }
+}

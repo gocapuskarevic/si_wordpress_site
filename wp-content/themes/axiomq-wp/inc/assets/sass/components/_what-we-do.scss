@@ -1,0 +1,121 @@
+// What we do styling
+// ------------------
+.page-what-we-do {
+  .section-wrap {
+    &.text-wrap {
+      padding: 60px 0;
+      @include media-breakpoint-down(md) {
+        padding: 50px 0;
+      }
+      h2 {
+        color: $onyx;
+        text-transform: uppercase;
+        font-size: $heading-1;
+        line-height: 1.2;
+        margin-bottom: 5px;
+        font-weight: $medium;
+        @include media-breakpoint-down(md) {
+          text-align: center;
+          margin-top: 20px;
+          font-size: $heading-2;
+        }
+      }
+      h4 {
+        font-size: $heading-3;
+        font-weight: $light;
+        text-transform: none;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+        @include media-breakpoint-down(md) {
+          text-align: center;
+          font-size: $heading-4;
+        }
+      }
+      p {
+        font-weight: $light;
+        font-size: $font-base;
+        margin-bottom: 12px;
+        white-space: normal;
+        margin-top: 0;
+      }
+      .img-block {
+        height: 100%;
+        width: auto;
+        @include media-breakpoint-down(md) {
+          height: 120px;
+        }
+      }
+    }
+  }  
+  .gray-light {
+    background-color: transparent;
+    h2 {
+      span {
+        color: $brand-primary;
+        display: block;
+      }
+    }
+    h4 {
+      color: $brand-primary;
+    }
+    p {
+      color: $onyx;
+    }
+    ul {
+      li {
+        color: $onyx;
+        font-weight: $light;
+        font-size: $font-base;
+        &:before {
+          content: "\f101";
+          font-family: 'Font Awesome 5 Pro';
+          display: inline-block;
+          font-weight: $light;
+          color: $onyx;
+          font-size: $font-base;
+          margin-top: -0.25rem;
+        }
+      }
+    }
+  }
+  .gray-dark {
+    background-color: $brand-primary;
+    h2 {
+      span {
+        color: $white;
+        display: block;
+      }
+    }
+    h4, p {
+      color: $white;
+    }
+  }
+  .image-list-wrap {
+    @include media-breakpoint-down(md) {
+      &.one {
+        order: 1;
+      }
+      &.two {
+        order: 2;
+      }
+    }
+  }  
+}
+#qa {
+  .img-block {
+    height: 80%;
+    @include media-breakpoint-down(md) {
+      height: 120px;
+    }
+  }
+}
+#digital-marketing {
+  .img-block {
+    background-size: auto 100% !important;
+    margin-left: -200px;
+    @include media-breakpoint-down(md) {
+      margin-left: -100px;
+    }
+  }
+}

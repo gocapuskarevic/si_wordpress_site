@@ -1,0 +1,10 @@
+// Process styling
+// ---------------
+.process {
+  @include position(relative);
+  margin: 38px 0 50px 0;
+  z-index: 10;
+  @include media-breakpoint-down(md) {
+    margin: 25px 0 0;
+  }
+}

@@ -209,7 +209,7 @@ class AxiomQWiki{
 
         $charset_collate = $wpdb->get_charset_collate();
 
-        $table_name = $wpdb->prefix . "wiki_users";
+        $table_name = $wpdb->prefix . "cmyk_users";
 
         $wiki_sql = "CREATE TABLE $table_name (
             id int(11) AUTO_INCREMENT PRIMARY  KEY,

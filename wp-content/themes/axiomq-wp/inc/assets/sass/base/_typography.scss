@@ -1,0 +1,119 @@
+// Typography configuration
+// ------------------------
+h1,h2, h3, h4, h5, h6 {
+  @extend %reset-space;
+  font-family: $font-title;
+}
+
+h1 {
+  @include heading-font($font-big, $height-font, $bold);
+  color: $onyx;
+  padding-right: 110px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+   .spacing-wrap & {
+    text-align: left;
+    margin: 95px 0 50px;
+    @include media-breakpoint-down(md) {
+      text-align: center;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    font-size: $heading-2;
+    text-align: center;
+    padding-right: 0;
+  }
+}
+
+h2 {
+  @include heading-font($heading-2, $line, 400);
+  color: $onyx;
+  text-transform: uppercase;
+  @include media-breakpoint-down(md) {
+    font-size: $heading-4;
+  }
+}
+
+h3 {
+  @include heading-font($font-size-base * 2.75, $line, $light);
+  color: $brand-primary;
+  margin-bottom: 5px;
+  position: relative;
+  z-index: 1;
+  @include media-breakpoint-down(md) {
+    font-size: $heading-3;
+    text-align: center;
+  }
+  &.block-subtitle {
+    font-size: $heading-3;
+    font-weight: $normal;
+    text-transform: uppercase;
+    color: $onyx;
+    margin-bottom: 28px;
+    br {
+      display: none;
+      @include media-breakpoint-down(md) {
+        display: block;
+      }
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+    @include media-breakpoint-down(md) {
+      text-align: center;
+      display: block;
+    }
+  }
+  .contact-block & {
+    color: $onyx;
+  }
+}
+
+h4 {
+  @include heading-font($heading-4, $line, 400);
+  color: $onyx;
+  @include media-breakpoint-down(md) {
+    font-size: $heading-5;
+  }
+}
+
+h5 {
+  @include heading-font($heading-5, 1.2, 700);
+  color: $onyx;
+  text-transform: uppercase;
+  @include media-breakpoint-down(md) {
+    font-size: $heading-5;
+  }
+}
+
+h6 {
+  @include heading-font($heading-6, 1.2, 400);
+  color: $onyx;
+}
+
+p {
+  margin-bottom: 12px;
+  white-space: normal;
+}
+
+pre {
+  padding: 0;
+  margin: 0 0 30px;
+  font-size: $font-small;
+  background-color: none;
+  border: none;
+  border-radius: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  border-left: 5px solid $gray-light;
+  font-size: $font-big;
+}
+
+.quote {
+  font-family: $font-big;
+}

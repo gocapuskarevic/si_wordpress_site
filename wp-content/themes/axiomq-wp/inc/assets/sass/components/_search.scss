@@ -1,0 +1,57 @@
+// Search styling
+// --------------
+.search-form {
+  margin: 20px 0 0;
+  .search-label {
+    width: 100%;
+    position: relative;
+    border: 1px solid $light-silver;
+    border-radius: 20px;
+    margin: 0px;
+    padding: 5px 8px;
+    .search-field {
+      border: none;
+      outline: none;
+      background: transparent;
+      padding-right: 35px;
+      &::placeholder {
+        color: $silver;
+      }
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+        &:hover, &:focus, &:active {
+          -webkit-box-shadow: 0 0 0 30px white inset !important;
+        }
+      }
+    }
+    .search-submit {
+      position: absolute;
+      right: 13px;
+      top: 0;
+      background: transparent;
+      color: $brand-primary;
+      border: none;
+      height: 100%;
+      outline: none;
+      font-size: $icon-small;
+    }
+  }   
+}
+.form-control {
+  &:focus {
+    box-shadow: none;
+  }
+}
+.blog-search {
+  margin: 27px 0 50px;
+  text-align: left;
+}
+.blog-padding {
+  padding-top: 14px;
+}
+.button-back-to-blog {
+  a {
+    margin: 50px auto;
+    display: block;
+  }
+}

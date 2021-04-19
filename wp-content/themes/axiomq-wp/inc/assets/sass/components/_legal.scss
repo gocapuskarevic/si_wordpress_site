@@ -1,0 +1,12 @@
+// Footer legal styling
+// --------------------
+.legal {
+  font-size: $font-smaller;
+  color: $onyx;
+  text-align: right;
+  margin-bottom: 0;
+  margin-top: 14px;
+  @include media-breakpoint-down(md) {
+    text-align: center;
+  }
+}

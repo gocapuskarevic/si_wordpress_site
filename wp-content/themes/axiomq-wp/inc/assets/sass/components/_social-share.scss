@@ -1,0 +1,41 @@
+// Social share styling
+// --------------------
+.social-share {
+  @include position(fixed, $top: 100px);
+  .addtoany_list a {
+    height: 30px;
+    display: block;
+    padding: 0;
+    margin-bottom: 3px;
+  }
+  @include media-breakpoint-down(lg) {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    .addtoany_list {
+      display: flex;
+      a {
+        flex: 1 1 0px;
+        text-align: center;
+        margin-bottom: 0;
+        &.a2a_button_twitter {
+          background-color: rgb(85, 172, 238);
+        }
+        &.a2a_button_linkedin {
+          background-color: rgb(0, 123, 181);
+        }
+        &.a2a_button_facebook {
+          background-color: rgb(59, 89, 152);
+        }
+        &.a2a_button_google_gmail {
+          background-color: rgb(221, 83, 71);
+        }
+      }
+    }
+  }
+  .widget {
+    margin: 0;
+  }
+}

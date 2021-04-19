@@ -1,0 +1,41 @@
+// Convincer styling
+// -----------------
+.convincer {
+  @include position(relative);
+  padding: 29px 0 90px;
+  @extend %clearfix;
+  .page-partners, .page-affiliate-programm & {
+    padding: 29px 0 10px;
+  }
+  @include media-breakpoint-down(md) {
+    padding: 15px 0 0;
+  }
+  &.section-wrap {
+      padding: 0 0 3px;
+      @include media-breakpoint-down(md) {
+        padding: 0 0 40px;
+      }
+      .title-spacing {
+        margin-top: 30px;
+      }
+    }
+  h4 {
+    margin-bottom: 20px;
+    strong {
+      font-size: $heading-3;
+      color: $brand-primary;
+    }
+  }
+  h4 br:first-of-type {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+  h4 {
+    font-weight: $normal;
+    @include media-breakpoint-down(md) {
+      font-size: $heading-5;
+      @include position(static);
+    }
+  }
+}

@@ -1,0 +1,60 @@
+// Single job post styling
+// -----------------------
+.single-job {
+  margin-top: 20px;
+  padding-bottom: 50px;
+  .section-title {
+    text-align: left;
+    padding-bottom: 22px;
+  }
+  h2 {
+    text-transform: none;
+  }
+  p {
+    margin-bottom: 22px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .norm_row {
+    &.sfsi_wDiv {
+      text-align: right !important;
+      right: 0;
+    }
+  }
+}
+
+.job-details {
+  margin: 12px 0 19px;
+}
+
+.job-row {
+  @extend %clearfix;
+  margin-bottom: 8px;
+  .col-float {
+    float: left;
+    width: 100px;
+    margin-right: 10px;
+    strong {
+      display: block;
+    }
+    &:last-child {
+      width: 130px;
+      margin-right: 0;
+    }
+  }
+}
+
+.job-apply {
+  margin-top: 10px;
+}
+
+.job-description {
+  h3 {
+    margin-top: 30px;
+  }
+}
+
+.a2a_label {
+  width: 0 !important;
+}

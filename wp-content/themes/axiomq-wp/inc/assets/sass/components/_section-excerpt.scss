@@ -1,0 +1,59 @@
+// Section excerpt styling
+// -----------------------
+.excerpt-wrap {
+  position: relative;
+  height: 100%;
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 80px;
+  }
+  .excerpt-button {
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    margin-bottom: 60px;
+    text-align: center;
+    &.no-margin {
+      margin-bottom: 0;
+    }
+  }
+  h3 {
+    margin-bottom: 40px;
+    @include media-breakpoint-down(md) {
+      text-align: center;
+    }
+  }
+  p {
+    margin-bottom: 20px;
+    a {
+      margin-top: 30px;
+    }
+    @include media-breakpoint-down(md) {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    br {
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+    @include media-breakpoint-only(md) {
+      padding: 0 80px;
+    }
+  }
+  .content-spacer {
+    padding-top: 10px;
+    margin-bottom: 30px;
+  }
+  .page-careers & {
+    p {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.hr-line {
+  border-top: 1px solid #e9ecef;
+}

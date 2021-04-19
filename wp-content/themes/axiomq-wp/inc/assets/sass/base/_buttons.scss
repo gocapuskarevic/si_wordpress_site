@@ -1,0 +1,147 @@
+// Button styling
+// --------------
+.btn {
+  @include border-radius(52px);
+  font-size: $font-base;
+  font-weight: $normal;
+  padding: 0 32px;
+  text-transform: uppercase;
+  height: 52px;
+  line-height: 52px;
+  @include media-breakpoint-down(sm) {
+    width: 100% !important;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+  .header & {
+    margin-top: 30px;
+    font-weight: $bold;
+    font-size: $font-small;
+  }
+  &-transparent {
+    @include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
+    background: transparent;
+    border: 1px solid $white;
+    color: $white;
+    &:hover {
+      color: $brand-primary;
+      background: $white;
+    }
+  }
+  &-rose-transparent {
+    background: transparent;
+    border: 1px solid $brand-accent;
+    color: $brand-accent;
+    &:hover {
+      background: $brand-accent;
+      color: $white;
+    }
+  }
+  &-rose {
+    @include transition(background 0.2s ease-in-out);
+    background: $brand-accent;
+    color: $white;
+    &:hover {
+      background: darken($brand-accent, 15%);
+      color: $white;
+    }
+  }
+  &-white {
+    @include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
+    background: transparent;
+    color: $brand-primary;
+    border: 1px solid $brand-primary;
+    &:hover {
+      background: $brand-primary;
+      color: $white;
+    }
+  }
+  &-white-rose {
+    @include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
+    background: transparent;
+    color: $brand-accent;
+    border: 1px solid $brand-accent;
+    &:hover {
+      background: $brand-accent;
+      color: $white;
+      border-color: $brand-accent;
+      @include transition(border 0.2s ease-in-out, color 0.2s ease-in-out);
+    }
+  }
+  &-blog-primary {
+    @include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
+    background: $brand-primary;
+    color: $white;
+    border: 1px solid $brand-primary;
+    &:hover {
+      background: lighten( $brand-primary, 10% );
+      border-color: lighten( $brand-primary, 10% );
+      color: $white;
+    }
+  }
+  &-blog-secondary {
+    @include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
+    background-color: $gray-light;
+    color: $gray;
+    border: 1px solid $gray;
+    &:hover {
+      color: $gray-light;
+      background: lighten( $gray, 10% );
+      border-color: lighten( $gray-light, 10% );
+    }
+  }
+  &-disabled {
+    @include transition(background 0.2s ease-in-out, color 0.2s ease-in-out);
+    background: $gray-light;
+    color: $gray;
+    border: 1px solid $gray-light;
+    cursor: not-allowed;
+    &:hover {
+      background: $gray-light;
+      color: $gray;
+      border: 1px solid $gray-light;
+    }
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+  &-disabled:active:focus {
+    outline: none;
+  }
+  &-width-md {
+    width: 166px;
+    padding: 0;
+  }
+  &-width-lg {
+    width: 170px;
+    padding: 0;
+  }
+  &-large {
+    @include border-radius(23px);
+    font-size: $font-base;
+    height: 46px;
+    line-height: 44px;
+    letter-spacing: -1px;
+    padding: 0 50px;
+    .convincer & {
+      width: 363px;
+      font-size: $heading-4;
+      font-weight: $bold;
+    }
+  }
+}
+
+.blog-link {
+  font-size: $font-base;
+  font-weight: $medium;
+  text-transform: uppercase;
+  height: 52px;
+  line-height: 52px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+
