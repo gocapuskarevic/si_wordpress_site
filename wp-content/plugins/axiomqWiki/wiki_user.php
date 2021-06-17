@@ -115,7 +115,7 @@ class Wiki_user {
                 $email = esc_sql( $_POST['email'] );
                 $pass = esc_sql( $_POST['pass'] );
 
-                $users = $wpdb->get_results( 'SELECT email, pass FROM wp_wiki_users' );
+                $users = $wpdb->get_results( 'SELECT email, pass FROM wp_cmyk_users' );
                 if( $users ){
 
                     $wp_hasher = new PasswordHash(8, TRUE);
@@ -156,7 +156,7 @@ class Wiki_user {
                     $pass=esc_sql($_POST['pass1']);
                     $email=esc_sql($_POST['email1']);
 
-                    $emails=$wpdb->get_results('SELECT email FROM wp_wiki_users');
+                    $emails=$wpdb->get_results('SELECT email FROM wp_cmyk_users');
                     foreach($emails as $one_email){
                         if($one_email->email === $email){
                             $status = 0;
@@ -165,7 +165,7 @@ class Wiki_user {
                     }
 
                     if($status){
-                        $insert = $wpdb->query( $wpdb->prepare( 'INSERT INTO wp_wiki_users
+                        $insert = $wpdb->query( $wpdb->prepare( 'INSERT INTO wp_cmyk_users
                                               ( username, email, pass ) 
                                                VALUES ( %s, %s, %s )',
                                                $username,

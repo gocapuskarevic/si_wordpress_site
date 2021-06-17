@@ -263,18 +263,18 @@ class AxiomQWiki{
             'editor', //add editor
         );
         $labels = array(
-            'name' => __('AxiomQ Wiki'),
-            'singular_name' => __('AxiomQ Wiki'),
-            'menu_name' => 'AxiomQ Wiki',
-            'name_admin_bar' => 'AxiomQ Wiki',
-            'add_new' => 'Add AxiomQ Wiki',
-            'add_new_item' =>'Add AxiomQ Wiki',
-            'new_item' => 'New axiomQ wiki',
-            'edit_item' => 'Edit axiomQ wiki',
-            'view_item' => 'View axiomQ wiki',
-            'all_items' => 'AxiomQ Wiki',
-            'search_items' => 'Search axiomQ wiki',
-            'not_found' => 'No axiomQ wiki found',
+            'name' => __('Dizajn Item'),
+            'singular_name' => __('Dizajn Item'),
+            'menu_name' => 'Dizajn Item',
+            'name_admin_bar' => 'Dizajn Item',
+            'add_new' => 'Add Dizajn Item',
+            'add_new_item' =>'Add Dizajn Item',
+            'new_item' => 'New Dizajn Item',
+            'edit_item' => 'Edit Dizajn Item',
+            'view_item' => 'View Dizajn Item',
+            'all_items' => 'Dizajn Item',
+            'search_items' => 'Search Dizajn Item',
+            'not_found' => 'No Dizajn Item found',
         );
         $args = array(
             'supports' => $supports,
@@ -449,7 +449,7 @@ class AxiomQWiki{
     public function wiki_header(){
         ?>
         <div class="margin">
-            <h1><a href="<?php echo site_url().'/axiomqwiki'; ?>">AxiomQ Wikipedia</a></h1>
+            <h1><a href="<?php echo site_url().'/blog/axiomqwiki'; ?>">Products</a></h1>
         </div>
         <?php
     }
@@ -500,8 +500,9 @@ class AxiomQWiki{
                         </div>
                     <?php endwhile; wp_reset_postdata();?>
                     <div class="col-12">
-                        <h2>Still need help?</h2>
-                        <p>Ask colleagues</p>
+                        <h2>We do not have in the offer you want?</h2>
+                        <p>Design your product yourself</p>
+                        <a href="https://www.photopea.com/" target="_blank">Click here</a>
                     </div>
                 </div>
             </div>
