@@ -18109,7 +18109,7 @@ div.wpcf7-response-output {
 }
 
 .affiliate-style .section-wrap.about-abbreviation {
-  padding-bottom: 30px;
+  padding: 50px;
 }
 .affiliate-style .section-wrap.about-abbreviation .page-partners, .page-affiliate-programm .affiliate-style .section-wrap.about-abbreviation {
   padding-bottom: 58px;
@@ -18802,6 +18802,19 @@ body.page-home .section-wrap:first-child, body.page-startseite .section-wrap:fir
     padding: 58px 0 17px;
     line-height: 1.1;
   }
+}
+
+.new-Dizain {
+  box-shadow: 5px 10px #888888;
+  margin-bottom: 25px;
+}
+.new-Dizain p {
+  color: #1cacb5;
+  font-weight: bold;
+}
+.new-Dizain a {
+  text-transform: uppercase;
+  color: black;
 }
 
 /*# sourceMappingURL=style.css.map */
