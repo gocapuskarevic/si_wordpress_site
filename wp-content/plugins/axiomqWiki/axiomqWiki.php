@@ -510,8 +510,6 @@ class AxiomQWiki
 
         <?php endif;
                 }
-
-
                 public function wiki_footer()
                 {
         ?>
