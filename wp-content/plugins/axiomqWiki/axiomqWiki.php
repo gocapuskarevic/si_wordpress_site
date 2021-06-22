@@ -495,12 +495,12 @@ class AxiomQWiki
                 <div class="row">
                     <h2>Newest : </h2>
                     <?php while ($wiki_posts->have_posts()) : $wiki_posts->the_post(); ?>
-                        <div class="col-12 new-Dizain">
+                        <div class="col-12 new-Design">
                             <h2><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></h2>
                         </div>
                     <?php endwhile;
                         wp_reset_postdata(); ?>
-                    <div class="col-12 new-Dizain">
+                    <div class="col-12 new-Design">
                         <h2>We do not have in the offer you want?</h2>
                         <p>Design your product yourself</p>
                         <a href="https://www.photopea.com/" target="_blank">Click here</a>
