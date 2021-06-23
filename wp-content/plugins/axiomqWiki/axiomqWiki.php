@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 /*
 Plugin Name: AxiomQ Wiki
 Description: A way to group your company's informations and knowledges into one spot.
@@ -33,19 +34,13 @@ if (!defined('AXIOMQ_WIKI_PLUGIN_DIR')) exit;
 
 require_once(ABSPATH . 'wp-includes/class-phpass.php');
 require('wiki_user.php');
-
-
-
 class AxiomQWiki
 {
-
     public static $wiki_nonce;
     private static $instance = null;
 
     public function __construct()
     {
-
-
         //when plugin is activated do
         register_activation_hook(__FILE__, array($this, 'wiki_create_data'));
 
@@ -113,9 +108,6 @@ class AxiomQWiki
                     });
 
                 })
-
-
-
 
             });
         </script> <?php
@@ -254,7 +246,7 @@ class AxiomQWiki
 
 
 
-
+                //ZA PRIKAZ OVE STRANICE
                 public function wiki_post_type()
                 {
                     $supports = array(
@@ -446,9 +438,41 @@ class AxiomQWiki
                 public function wiki_header()
                 {
         ?>
-        <div class="margin">
-            <h1><a href="<?php echo site_url() . '/blog/axiomqwiki'; ?>">Products</a></h1>
-        </div>
+        <!--HEADER-->
+        <header class="header">
+            <button type="button" class="nav-toggle main-menu-toggle">
+                <span class="icon-bar"></span>
+            </button>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="logo">
+                            <h2>
+                                <a href="http://localhost/si_wordpress_site/">
+                                    <img src="" alt="">
+                                </a>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <nav class="nav navbar-collapse main-menu">
+                            <div class="menu-header-menu-container">
+                                <ul id="menu-header-menu" class="menu">
+                                    <li id="menu-item-21" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-12 current_page_item menu-item-21 active"><a title="Portfolio" href="http://localhost/si_wordpress_site/" class="nav-link">Portfolio</a></li>
+                                    <li id="menu-item-5788" class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-5788"><a href="<?php echo site_url() . '/blog/axiomqwiki'; ?>">Products</a></a></li>
+                                    <li id="menu-item-5791" class="nav-item menu-item menu-item-type-post_type menu-item-object-page menu-item-5791"><a title="About Us" href="http://localhost/si_wordpress_site/about-us/" class="nav-link">About Us</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-lg-2 d-none d-lg-block">
+                        <div class="text-right">
+                            <a href="http://localhost/si_wordpress_site/index" class="btn btn-rose fit-menu">LOG OUT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
     <?php
                 }
 
