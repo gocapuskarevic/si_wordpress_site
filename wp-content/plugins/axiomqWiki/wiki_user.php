@@ -1,11 +1,13 @@
 <?php
-class Wiki_user {
+class Wiki_user
+{
 
-    protected $username,$password,$email;
+    protected $username, $password, $email;
 
 
-    public static function wiki_registre(){
-        ?>
+    public static function wiki_registre()
+    {
+?>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 text-center">
@@ -13,18 +15,18 @@ class Wiki_user {
                 </div>
                 <div class="col-12 col-md-6 offset-md-3">
 
-                <?php if( isset( $GLOBALS['wiki_registration_error'] ) && $GLOBALS['wiki_registration_error'] == true) : ?>
-                    <div class="col-12 text-center">
-                        <div class="">
-                            <h2>Error, try again</h2>
+                    <?php if (isset($GLOBALS['wiki_registration_error']) && $GLOBALS['wiki_registration_error'] == true) : ?>
+                        <div class="col-12 text-center">
+                            <div class="">
+                                <h2>Error, try again</h2>
+                            </div>
                         </div>
-                    </div>
 
-                <?php endif; ?>
-                
+                    <?php endif; ?>
+
                     <div id="wiki-registration">
 
-                    <!-- Registration for new users-->
+                        <!-- Registration for new users-->
                         <form method="POST" action="">
                             <label for="fname">Username : </label>
                             <input type="text" id="fname" name="fname" class="form-control" required><br>
@@ -53,15 +55,16 @@ class Wiki_user {
                 </div>
             </div>
         </div>
-        <?php
+    <?php
     }
 
-    public static function wiki_login(){
-        ?>
+    public static function wiki_login()
+    {
+    ?>
         <div class="container-fluid">
             <div class="row">
 
-                <?php if(isset( $GLOBALS['wiki_login_parameters'] )  && $GLOBALS['wiki_login_parameters'] == true ) : ?>
+                <?php if (isset($GLOBALS['wiki_login_parameters'])  && $GLOBALS['wiki_login_parameters'] == true) : ?>
                     <div class="col-12 text-center">
                         <div class="">
                             <h2>Wrong parameters</h2>
@@ -75,7 +78,7 @@ class Wiki_user {
                     <h1>Login form</h1>
                 </div>
                 <div class="col-12 col-md-6 offset-md-3">
-                <!-- Log in form-->
+                    <!-- Log in form-->
                     <div id="wiki-registration">
                         <form method="POST" action="">
                             <label for="email">Email : </label>
@@ -93,37 +96,38 @@ class Wiki_user {
 
                         <!-- Registration Button on Log In page-->
                         <form method="POST" action="">
-                            
+
                             <input type="submit" name="registration" value="Registration" class="btn btn-dark btn-block">
                         </form>
 
-                        
+
                     </div>
                 </div>
             </div>
         </div>
-        <?php
+<?php
     }
 
-    public static function wiki_checklogin(  ){
+    public static function wiki_checklogin()
+    {
         $status = 0;
 
-        if( isset($_POST['wp_nonce_wiki_login']) && wp_verify_nonce( $_POST['wp_nonce_wiki_login'], 'user-login' ) ){
+        if (isset($_POST['wp_nonce_wiki_login']) && wp_verify_nonce($_POST['wp_nonce_wiki_login'], 'user-login')) {
             global $wpdb;
-            
-            if(isset($_POST['email']) && isset($_POST['pass'])){
-                $email = esc_sql( $_POST['email'] );
-                $pass = esc_sql( $_POST['pass'] );
 
-                $users = $wpdb->get_results( 'SELECT email, pass FROM wp_cmyk_users' );
-                if( $users ){
+            if (isset($_POST['email']) && isset($_POST['pass'])) {
+                $email = esc_sql($_POST['email']);
+                $pass = esc_sql($_POST['pass']);
+
+                $users = $wpdb->get_results('SELECT email, pass FROM wp_cmyk_users');
+                if ($users) {
 
                     $wp_hasher = new PasswordHash(8, TRUE);
 
-                    foreach ( $users as $user ){
+                    foreach ($users as $user) {
                         var_dump($wp_hasher->CheckPassword($pass, $user->pass));
-                        if($user->email == $email && $wp_hasher->CheckPassword($pass, $user->pass) ){
-                            $status=1;
+                        if ($user->email == $email && $wp_hasher->CheckPassword($pass, $user->pass)) {
+                            $status = 1;
                             break;
                         }
                     }
@@ -132,7 +136,6 @@ class Wiki_user {
                 }
 
                 return $status;
-                
             } else {
 
                 return $status;
@@ -140,55 +143,53 @@ class Wiki_user {
 
             return $status;
         }
-        
-        return $status;
 
+        return $status;
     }
 
-    public static function wiki_add_user(){
-        if( isset($_POST['wp_nonce_wiki_reg']) && wp_verify_nonce( $_POST['wp_nonce_wiki_reg'], 'user-registration' ) ){
+    public static function wiki_add_user()
+    {
+        if (isset($_POST['wp_nonce_wiki_reg']) && wp_verify_nonce($_POST['wp_nonce_wiki_reg'], 'user-registration')) {
             global $wpdb;
             $status = 1;
-            if (isset($_POST['fname']) && isset($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['email1']) && isset($_POST['email2'])){
-                if($_POST['pass1']==$_POST['pass2'] && $_POST['email1']==$_POST['email2']){
+            if (isset($_POST['fname']) && isset($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['email1']) && isset($_POST['email2'])) {
+                if ($_POST['pass1'] == $_POST['pass2'] && $_POST['email1'] == $_POST['email2']) {
                     //escape 
-                    $username=esc_sql($_POST['fname']);
-                    $pass=esc_sql($_POST['pass1']);
-                    $email=esc_sql($_POST['email1']);
+                    $username = esc_sql($_POST['fname']);
+                    $pass = esc_sql($_POST['pass1']);
+                    $email = esc_sql($_POST['email1']);
 
-                    $emails=$wpdb->get_results('SELECT email FROM wp_cmyk_users');
-                    foreach($emails as $one_email){
-                        if($one_email->email === $email){
+                    $emails = $wpdb->get_results('SELECT email FROM wp_cmyk_users');
+                    foreach ($emails as $one_email) {
+                        if ($one_email->email === $email) {
                             $status = 0;
                             break;
                         }
                     }
 
-                    if($status){
-                        $insert = $wpdb->query( $wpdb->prepare( 'INSERT INTO wp_cmyk_users
+                    if ($status) {
+                        $insert = $wpdb->query(
+                            $wpdb->prepare(
+                                'INSERT INTO wp_cmyk_users
                                               ( username, email, pass ) 
                                                VALUES ( %s, %s, %s )',
-                                               $username,
-                                               $email,
-                                               wp_hash_password( $pass ) )
-                                           );
+                                $username,
+                                $email,
+                                wp_hash_password($pass)
+                            )
+                        );
                         return $insert;
-
                     } else {
                         return $status = 0;
                     }
-
-                }else{
+                } else {
                     return $status = 0;
                 }
-
-            }else{
+            } else {
                 return $status = 0;
-
             }
-        }else {
+        } else {
             return $status = 0;
         }
-       
     }
 }
