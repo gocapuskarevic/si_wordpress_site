@@ -89,26 +89,30 @@ class AxiomQWiki
     public function wiki_javascript_ajax()
     { ?>
         <script type="text/javascript">
+        
             jQuery(document).ready(function($) {
 
                 jQuery('.user-delete').on('click', function() {
-                    var $email = jQuery(this).data('email');
+                    var $id = jQuery(this).data('id');
 
                     var data = {
                         'action': 'wiki_action_delete_wiki_user',
-                        'userid': jQuery(this).data('id'),
-                        'useremail': $email,
+                        'userid': $id,
                     };
 
                     // since 2.8 ajaxurl is always defined in the admin header and points to admin-ajax.php
                     jQuery.post(ajaxurl, data, function(response) {
-                        jQuery('td:contains("' + $email + '")').text('User is deleted');
-                        jQuery('.user-delete[data-email="' + $email + '"]').remove();
+                        jQuery('.item[data-item="' + $id + '"]').remove();
+                        //jQuery('.user-delete[data-email="' + $email + '"]').remove();
                     });
 
                 })
-
+                jQuery('.order').on('click', function(){
+                    order($(this).data('url'))
+                })
             });
+
+            
         </script> <?php
                 }
 
@@ -118,10 +122,10 @@ class AxiomQWiki
 
                     $id = intval($_POST['userid']);
 
-                    $result = $wpdb->delete('wp_wiki_users', array('id' => $id), '%d');
+                    $result = $wpdb->delete('wp_orders', array('id' => $id), '%d');
 
                     if ($result) {
-                        echo 'User ' . $_POST['useremail'] . 'is deleted';
+                        
                     } else {
                         echo $wpdb->show_errors();;
                     }
@@ -318,8 +322,8 @@ class AxiomQWiki
                 public function wiki_settings_page()
                 {
                     // Add the menu item and page
-                    $page_title = 'Wiki settings';
-                    $menu_title = 'Wiki users';
+                    $page_title = 'Design settings';
+                    $menu_title = 'Ordered items';
                     $capability = 'manage_options';
                     $slug = 'wiki_settings';
                     $callback = array($this, 'wiki_list_users');
@@ -332,21 +336,24 @@ class AxiomQWiki
                 public function wiki_list_users()
                 {
                     global $wpdb;
-                    $results = $wpdb->get_results('SELECT * FROM wp_wiki_users');
+                    $results = $wpdb->get_results('SELECT * FROM wp_orders');
 
                     if ($results) : ?>
             <table>
                 <?php foreach ($results as $result) : ?>
-                    <tr>
-                        <td>
-                            <?php echo $result->username; ?>
-                        </td>
+                    <tr class="item" data-item="<?php echo $result->id ?>">
+                        
 
-                        <td>
+                        <td >
                             <?php echo $result->email; ?>
                         </td>
+
+                        
                         <td>
-                            <button class="user-delete" data-id="<?php echo $result->id ?>" data-email="<?php echo $result->email ?>">Delete user</button>
+                            <img src="<?php echo $result->image; ?>" style="width:150px;">
+                        </td>
+                        <td>
+                            <button class="user-delete" data-id="<?php echo $result->id ?>" data-email="<?php echo $result->email ?>">Delete item</button>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -543,5 +550,5 @@ class AxiomQWiki
                 }
             }
 
-            $wiki_wiki = new AxiomQWiki;
+$wiki_wiki = new AxiomQWiki;
             

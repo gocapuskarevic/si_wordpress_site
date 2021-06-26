@@ -249,12 +249,7 @@ function wp_bootstrap_starter_password_form() {
 }
 add_filter( 'the_password_form', 'wp_bootstrap_starter_password_form' );
 
-// Add options page
-if( function_exists('acf_add_options_page') ) {
 
-    acf_add_options_page("Contact info");
-
-}
 
 /**
  * Implement the Custom Header feature.
