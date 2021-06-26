@@ -6531,6 +6531,14 @@ template {
   display: none !important;
 }
 
+#namePost {
+  font-weight: bold;
+}
+
+.catPosts {
+  margin-top: 20px;
+}
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
@@ -18250,6 +18258,12 @@ div.wpcf7-response-output {
     padding: 0;
   }
 }
+.affiliate-style .catPosts {
+  border: 2px solid red;
+}
+.affiliate-style .catPosts h2 {
+  color: red;
+}
 
 body.page-home .excerpt-wrap h5, body.page-startseite .excerpt-wrap h5, body.page-team .excerpt-wrap h5, body.page-contact .excerpt-wrap h5, body.page-kontakt .excerpt-wrap h5, body.page-what-we-do .excerpt-wrap h5, body.page-portfolio .excerpt-wrap h5, body.page-careers .excerpt-wrap h5,
 body.page-template-page-careers-single .excerpt-wrap h5 {
@@ -18815,6 +18829,11 @@ body.page-home .section-wrap:first-child, body.page-startseite .section-wrap:fir
 .new-Design a {
   text-transform: uppercase;
   color: black;
+}
+
+.groupPosts h2 {
+  border: 20px solid red;
+  color: red;
 }
 
 /*# sourceMappingURL=style.css.map */
