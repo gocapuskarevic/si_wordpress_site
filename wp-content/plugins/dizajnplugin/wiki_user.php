@@ -125,9 +125,10 @@ class Wiki_user
                     $wp_hasher = new PasswordHash(8, TRUE);
 
                     foreach ($users as $user) {
-                        var_dump($wp_hasher->CheckPassword($pass, $user->pass));
+                        //var_dump($wp_hasher->CheckPassword($pass, $user->pass));
                         if ($user->email == $email && $wp_hasher->CheckPassword($pass, $user->pass)) {
                             $status = 1;
+                            echo '<script>window.sessionStorage.setItem( "email", "'.$user->email.'");</script>';
                             break;
                         }
                     }

@@ -372,3 +372,14 @@ define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
 @ini_set( 'upload_max_size' , '64M' );
 @ini_set( 'post_max_size', '64M');
 @ini_set( 'max_execution_time', '300' );
+
+            
+add_action('wp_ajax_order', 'order');
+add_action('wp_ajax_nopriv_order', 'order');
+
+function order(){
+    global $wpdb;     
+    $table_name = 'wp_orders';     
+    $wpdb->insert($table_name, array('email' => $_POST['mail'], 'image' => $_POST['url']));
+    exit();
+}

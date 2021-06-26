@@ -232,6 +232,10 @@ jQuery( function ( $ ) {
     }else {
         $( "#header-fixed" ).remove();
     }
+
+    $('.order').on('click', function(){
+        order($(this).data('url'))
+    })
 });
 
 //Open email client and replace characters(Avoid spammers)
@@ -250,61 +254,16 @@ jQuery( function ( $ ) {
    
 
 
-//Fix sticky bug when content width is shorter than sticky sidebar
- (function($){
-    $(window).load(function(){
-        if($('#measurement').length){
-            var content=$('#measurement');
-            var height=content.height();
-            var sidebar=$('.sidebar').height();
-            if(height<sidebar){
-                content.height(sidebar+1);
-            }
-        }
-        
-    })
-})(jQuery); 
-
-
-    // Textarea overflow (from file js/scroll.js)
-
-    var textarea = null;
-    window.addEventListener("load", function() {
-      textarea = window.document.querySelector("textarea");
-      if(textarea){
-        textarea.addEventListener("keypress", function() {
-          if(textarea.scrollTop != 0){
-            textarea.style.height = textarea.scrollHeight + "px";
-          }
-        }, false); }
-    }, false);
-  
-    //skip-link-focus-fix.js file content
-    (function() {
-        var isIe = /(trident|msie)/i.test( navigator.userAgent );
-    
-        if ( isIe && document.getElementById && window.addEventListener ) {
-            window.addEventListener( 'hashchange', function() {
-                var id = location.hash.substring( 1 ),
-                    element;
-    
-                if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
-                    return;
-                }
-    
-                element = document.getElementById( id );
-    
-                if ( element ) {
-                    if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) ) {
-                        element.tabIndex = -1;
-                    }
-    
-                    element.focus();
-                }
-            }, false );
-        }
-    })();
-
-    
+function order(image_url) {
+    var all_data = { action: "order", mail: window.sessionStorage.getItem( "email"), url : image_url };
+    jQuery.ajax({
+        url: "http://localhost/si_wordpress_site/wp-admin/admin-ajax.php",
+        method: "POST",
+        async: true,
+        data: all_data,
+    }).done(function(html) {
+           alert('Order is sent.')
+    }).fail(function(xhr, status, err) { console.log([xhr, status, err]); });
+}
   
     

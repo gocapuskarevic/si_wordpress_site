@@ -30,7 +30,7 @@
                         'post_status'   => 'publish',
                         'order'         => 'DESC',
                         'orderby'       => 'date',
-                        'posts_per_page' => 3
+                        'posts_per_page' => -1
                     );
 
                     $design_posts = new WP_Query($posts_args); ?>

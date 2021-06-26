@@ -80,7 +80,6 @@ class AxiomQWiki
 
         <script>
             document.getElementsByTagName('body')[0].classList.add('wiki-wiki');
-            console.log('radis li');
         </script>
 
     <?php
@@ -293,17 +292,17 @@ class AxiomQWiki
                 public function wiki_taxonomy()
                 {
                     $labels = array(
-                        'name' => _x('Wiki category', 'taxonomy general name'),
-                        'singular_name' => _x('Wiki category', 'taxonomy singular name'),
-                        'search_items' =>  __('Search Wiki categories'),
-                        'all_items' => __('All Wiki categories'),
-                        'parent_item' => __('Parent Wiki category'),
-                        'parent_item_colon' => __('Parent Wiki category:'),
-                        'edit_item' => __('Edit Wiki category'),
-                        'update_item' => __('Update Wiki category'),
-                        'add_new_item' => __('Add New Wiki category'),
-                        'new_item_name' => __('New Wiki category Name'),
-                        'menu_name' => __('Wiki categories'),
+                        'name' => _x('Dizajn category', 'taxonomy general name'),
+                        'singular_name' => _x('Dizajn category', 'taxonomy singular name'),
+                        'search_items' =>  __('Search Dizajn categories'),
+                        'all_items' => __('All Dizajn categories'),
+                        'parent_item' => __('Parent Dizajn category'),
+                        'parent_item_colon' => __('Parent Dizajn category:'),
+                        'edit_item' => __('Edit Dizajn category'),
+                        'update_item' => __('Update Dizajn category'),
+                        'add_new_item' => __('Add New Dizajn category'),
+                        'new_item_name' => __('New Dizajn category Name'),
+                        'menu_name' => __('Dizajn categories'),
                     );
 
                     register_taxonomy('wiki_categories', array('post'), array(
@@ -467,7 +466,7 @@ class AxiomQWiki
                     </div>
                     <div class="col-lg-2 d-none d-lg-block">
                         <div class="text-right">
-                            <a href="http://localhost/si_wordpress_site/" class="btn btn-rose fit-menu">Home Page</a>
+                            <a href="http://localhost/si_wordpress_site/" class="btn btn-rose fit-menu ">Home Page</a>
                         </div>
                     </div>
                 </div>
@@ -545,3 +544,4 @@ class AxiomQWiki
             }
 
             $wiki_wiki = new AxiomQWiki;
+            

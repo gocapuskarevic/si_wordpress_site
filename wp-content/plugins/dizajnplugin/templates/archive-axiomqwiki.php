@@ -1,6 +1,5 @@
 <?php
 
-echo __FILE__;
 wp_head();
 
 //fetch axiomqwiki categories
