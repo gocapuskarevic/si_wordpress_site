@@ -467,7 +467,7 @@ class AxiomQWiki
                     </div>
                     <div class="col-lg-2 d-none d-lg-block">
                         <div class="text-right">
-                            <a href="http://localhost/si_wordpress_site/index" class="btn btn-rose fit-menu">LOG OUT</a>
+                            <a href="http://localhost/si_wordpress_site/" class="btn btn-rose fit-menu">Home Page</a>
                         </div>
                     </div>
                 </div>
@@ -509,7 +509,7 @@ class AxiomQWiki
                         'post_status'   => 'publish',
                         'order'         => 'DESC',
                         'orderby'       => 'date',
-                        'posts_per_page' => 5
+                        'posts_per_page' => 3
                     );
 
                     $wiki_posts = new WP_Query($posts_args);
@@ -520,7 +520,7 @@ class AxiomQWiki
                     <h2>Newest : </h2>
                     <?php while ($wiki_posts->have_posts()) : $wiki_posts->the_post(); ?>
                         <div class="col-12 new-Design">
-                            <h2><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></h2>
+                            <?php the_post_thumbnail(); ?>
                         </div>
                     <?php endwhile;
                         wp_reset_postdata(); ?>

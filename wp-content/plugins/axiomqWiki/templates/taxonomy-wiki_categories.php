@@ -37,6 +37,7 @@ $wiki_posts_tax = new WP_Query($posts_args);
                     <?php while ($wiki_posts_tax->have_posts()) : $wiki_posts_tax->the_post(); ?>
                         <div class="col-6">
                             <h2 class="catPosts"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></h2>
+                            <a href="#" class="btn btn-rose fit-menu">Order Now</a>
                         </div>
                     <?php endwhile;
                     wp_reset_postdata(); ?>

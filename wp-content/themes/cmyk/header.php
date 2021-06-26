@@ -83,20 +83,8 @@
       </button>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-3">
-            <div class="logo">
-              <h2>
-                <a href="<?php echo esc_url( home_url( '/' )); ?>">
-                  <?php
-                    $custom_logo_id = get_theme_mod( 'custom_logo' );
-                    $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                  ?>
-                  <img src="<?php echo $image[0]; ?>" alt="">
-                </a>
-              </h2>
-            </div>
-          </div>
-          <div class="col-lg-7">
+          
+          <div class="col-lg-12">
             <nav class="nav navbar-collapse main-menu">
               <?php
               wp_nav_menu(array(
@@ -112,11 +100,7 @@
               ?>
             </nav>
           </div>
-          <div class="col-lg-2 d-none d-lg-block">
-            <div class="text-right">
-              <a href="<?php bloginfo('url');?>/contact" class="btn btn-rose fit-menu"><?php the_field('get_contact', 'option'); ?></a>
-            </div>
-          </div>
+          
         </div>
       </div>
     </header>
@@ -127,20 +111,7 @@
       </button>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-3">
-            <div class="logo">
-              <h2>
-                <a href="<?php echo esc_url( home_url( '/' )); ?>">
-                  <?php
-                    $custom_logo_id = get_theme_mod( 'custom_logo' );
-                    $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                  ?>
-                  <img src="<?php echo $image[0]; ?>" alt="">
-                </a>
-              </h2>
-            </div>
-          </div>
-          <div class="col-lg-7">
+          <div class="col-lg-12">
             <nav class="nav navbar-collapse main-menu">
               <?php
               wp_nav_menu(array(
@@ -156,11 +127,7 @@
               ?>
             </nav>
           </div>
-          <div class="col-lg-2 d-none d-lg-block">
-            <div class="text-right">
-              <a href="<?php bloginfo('url');?>/contact" class="btn btn-rose fit-menu"><?php the_field('get_contact', 'option'); ?></a>
-            </div>
-          </div>
+          
         </div>
       </div>
     </section>

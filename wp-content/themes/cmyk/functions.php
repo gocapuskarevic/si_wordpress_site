@@ -369,3 +369,6 @@ function addtoany_disable_script_on_homepage($script_disabled) {
 add_filter( 'addtoany_script_disabled', 'addtoany_disable_script_on_homepage' );
 
 define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
